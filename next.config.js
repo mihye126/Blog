@@ -13,6 +13,8 @@ module.exports = withPlugins([
   }],[withBundleAnalyzer({
     staticPageGenerationTimeout: 300,
     images: {
+      loader:'akamai',
+      path:'/',
       domains: [
         'www.notion.so',
         'notion.so',
