@@ -11,7 +11,6 @@ module.exports = withPlugins([
   [optimizedImages, {
     optimizeImages: false,
   }],[withBundleAnalyzer({
-    staticPageGenerationTimeout: 300,
     images: {
       loader:'akamai',
       path:'/',
