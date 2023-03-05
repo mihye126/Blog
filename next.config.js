@@ -15,7 +15,8 @@ module.exports = withPlugins([
         'pbs.twimg.com',
         'abs.twimg.com',
         's3.us-west-2.amazonaws.com',
-        'ibb.co'
+        'ibb.co',
+        'static.solved.ac'
       ],
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
