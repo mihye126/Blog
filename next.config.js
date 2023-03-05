@@ -3,7 +3,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
 
 module.exports = withPlugins([
   [withBundleAnalyzer({
@@ -22,9 +21,7 @@ module.exports = withPlugins([
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
     }
-  })],  [optimizedImages, {
-    /* config for next-optimized-images */
-  }],
+  })], 
   // your other plugins here
 ])
 

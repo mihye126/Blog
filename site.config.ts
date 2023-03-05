@@ -2,7 +2,7 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: process.env.ROOT_NOTION_PAGE_ID  ,
+  rootNotionPageId: 'BLOG-1a5116ebf0794cdc8b49cc9bbabaa36d',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -14,7 +14,7 @@ export default siteConfig({
   author: 'Mihye Bae',
 
   // open graph metadata (optional)
-  description: 'Hye.dev',
+  description: 'Hye.dev Blog',
 
   // social usernames (optional)
   //twitter: 'transitive_bs',
@@ -43,11 +43,10 @@ export default siteConfig({
   // example:
   //
   pageUrlOverrides: {
-    '/post': process.env.NOTION_PAGE_POST_ID,
-    '/archive': process.env.NOTION_PAGE_ARCHIVE_ID,
-    '/contact': process.env.NOTION_PAGE_CONTACT_ID,
-    '/personal': process.env.NOTION_PAGE_PERSONAL_ID
-  
+    '/post': 'Post-35bfd9e195c547de95e62017234aefe7',
+    '/archive': 'Archive-9a5d1fdf7f73421e995b1844f04f0f3b',
+    '/contact': 'Contact-c14a3833d6a44c23ad9728ddc9549985',
+    '/personal': 'Peronal-ee5febd682754ccb8537da77b0f09c6c'
   },
   // pageUrlOverrides: null,
 
