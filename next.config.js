@@ -23,6 +23,7 @@ module.exports = withPlugins([
         's3.us-west-2.amazonaws.com',
         'static.solved.ac',
         'ibb.co',
+
       ],
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
