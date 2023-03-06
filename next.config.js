@@ -28,34 +28,5 @@ module.exports = withPlugins([
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
     }
-  })],[{
-    webpackDevMiddleware: (config) => {
-      // Webpack Dev Middleware 설정
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-      };
-      return config;
-    },
-    webpack: (config, { isServer }) => {
-      // Webpack 설정
-      if (!isServer) {
-        config.node = {
-          fs: 'empty',
-          net: 'empty',
-          tls: 'empty',
-        };
-        config.devServer = {
-          client: {
-            webSocketURL: 'http://localhost:3000',
-            // 웹소켓 연결 대신 HTTP 롱 폴링 사용
-            transport: 'polling',
-          },
-        };
-      }
-      return config;
-    },
-  }  
-  
-  ]
+  })]
 ], nextConfig);
