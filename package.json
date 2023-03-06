@@ -52,6 +52,8 @@
     "react-notion-x": "^6.15.6",
     "react-tweet-embed": "^2.0.0",
     "react-use": "^17.3.2",
+    "redis": "^4.6.5",
+    "redis-cli": "^2.1.2",
     "rss": "^1.2.2",
     "vercel": "^28.16.12"
   },

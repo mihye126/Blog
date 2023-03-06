@@ -9,15 +9,15 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Hye.dev',
-  domain: 'hye-dev.vercel.app/',
+  name: 'Hye-dev',
+  domain: 'https://transitivebullsh.it/',
   author: 'Mihye Bae',
 
   // open graph metadata (optional)
-  description: 'Hye.dev Blog',
+  description: 'Hye-dev Blog',
 
   // social usernames (optional)
-  //twitter: 'transitive_bs',
+  twitter: 'hye_dev_',
   github: 'mihye126',
   linkedin: 'mihye126',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
