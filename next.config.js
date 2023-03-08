@@ -3,14 +3,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 const withPlugins = require("next-compose-plugins");
-const optimizedImages = require("next-optimized-images");
 
 const nextConfig = {};
 
 module.exports = withPlugins([
-  [optimizedImages, {
-    optimizeImages: false,
-  }],[withBundleAnalyzer({
+  [withBundleAnalyzer({
     images: {
       loader:'akamai',
       path:'/',
@@ -23,7 +20,7 @@ module.exports = withPlugins([
         's3.us-west-2.amazonaws.com',
         'static.solved.ac',
         'ibb.co',
-
+        '',
       ],
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
