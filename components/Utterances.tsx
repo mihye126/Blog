@@ -7,7 +7,7 @@ export const Utterances: React.FC<{
   isBlogPost: boolean
 }> = ({ isBlogPost }) => {
  
-  if (! isBlogPost && utterancesRepo==null) {
+  if (! isBlogPost || utterancesRepo==null) {
     return null
   }
 
