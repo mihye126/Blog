@@ -25,7 +25,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
-import { GithubComment } from './Comment'
+import { Utterances } from './Utterances'
 
 import styles from './styles.module.css'
 
@@ -208,7 +208,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
-  const comment = React.useMemo(() =><GithubComment isBlogPost={isBlogPost}/>, [isBlogPost])
+  const comment = React.useMemo(() =><Utterances isBlogPost={isBlogPost}/>, [isBlogPost])
   console.log()
 
   if (router.isFallback) {
