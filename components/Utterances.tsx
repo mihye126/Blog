@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect } from 'react';
+import React, { createRef, useLayoutEffect, useState} from 'react';
 import {utterancesRepo} from '../lib/config'
 
 const src = 'https://utteranc.es/client.js';
@@ -6,13 +6,17 @@ const src = 'https://utteranc.es/client.js';
 export const Utterances: React.FC<{
   isBlogPost: boolean
 }> = ({ isBlogPost }) => {
- 
+
+  
+  const [repo, setRepo] = useState(utterancesRepo);
+
   if (! isBlogPost || utterancesRepo==null) {
     return null
   }
 
   // only display comments and page actions on blog post pages
   if (isBlogPost && utterancesRepo!=null) {
+    
     const containerRef = createRef<HTMLDivElement>();
 
     useLayoutEffect(() => {
@@ -33,10 +37,8 @@ export const Utterances: React.FC<{
       });
 
       containerRef.current.appendChild(utterances);
-  }, [isBlogPost,utterancesRepo]);
+  }, [repo]);
 
-
-  console.log(containerRef)
   return <div className='notion-hr' ><div ref={containerRef} className="utterances"/></div>;
   }
 
