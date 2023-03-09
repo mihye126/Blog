@@ -172,6 +172,11 @@ export const posthogConfig: Partial<PostHogConfig> = {
   api_host: 'https://app.posthog.com'
 }
 
+//Utterances
+export const isUtterancesEnabled: boolean = getSiteConfig('isUtterancesEnabled', false)
+export const utterancesRepo = isUtterancesEnabled? process.env.NEXT_PUBLIC_UTTERANCES_REPO: null
+
+
 function cleanPageUrlMap(
   pageUrlMap: PageUrlOverridesMap,
   {

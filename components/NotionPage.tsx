@@ -25,6 +25,8 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { GithubComment } from './Comment'
+
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -197,7 +199,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
-  console.log(showTableOfContents)
+
   const pageAside = React.useMemo(
     () => (
       <PageAside block={block} recordMap={recordMap} isBlogPost={isBlogPost} />
@@ -206,6 +208,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
+  const comment = React.useMemo(() =><GithubComment isBlogPost={isBlogPost}/>, [isBlogPost])
+  console.log()
 
   if (router.isFallback) {
     return <Loading />
@@ -284,6 +288,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageFooter={comment}
         footer={footer}
       />
 
