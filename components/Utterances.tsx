@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect, useState} from 'react';
+import React, { createRef, useLayoutEffect, useState, useEffect} from 'react';
 import {utterancesRepo} from '../lib/config'
 
 const src = 'https://utteranc.es/client.js';
@@ -16,7 +16,9 @@ export const Utterances: React.FC<{
 
   // only display comments and page actions on blog post pages
   if (isBlogPost && utterancesRepo!=null) {
-    
+    if (typeof document === 'undefined') {
+      React.useLayoutEffect = React.useEffect;
+    }
     const containerRef = createRef<HTMLDivElement>();
 
     useLayoutEffect(() => {
