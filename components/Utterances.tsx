@@ -33,7 +33,7 @@ export const Utterances: React.FC<{
       });
 
       containerRef.current.appendChild(utterances);
-  }, []);
+  }, [isBlogPost,utterancesRepo]);
 
 
   console.log(containerRef)
