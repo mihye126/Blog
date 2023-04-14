@@ -366,7 +366,7 @@
 }
 
 
-.notion-list {
+.notion-list, .notion-toggle {
   display:block;
 	width:100%;
 	height:auto;
