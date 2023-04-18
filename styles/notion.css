@@ -11,6 +11,9 @@
   --notion-max-width: 720px;
   --notion-header-height: 54px;
 }
+.notion-page-content-inner>*{
+  max-width: 100%;
+}
 
 .notion-frame {
   padding: 0;
