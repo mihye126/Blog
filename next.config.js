@@ -8,7 +8,7 @@ const nextConfig = {};
 
 module.exports = withPlugins([
   [withBundleAnalyzer({
-    staticPageGenerationTimeout: 300,
+    staticPageGenerationTimeout: 500,
     images: {
       loader:'akamai',
       path:'/',
