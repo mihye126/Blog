@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+
+}
+*:not(.notion-aside){
   max-width: 100%;
 }
 
