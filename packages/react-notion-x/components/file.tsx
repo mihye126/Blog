@@ -1,9 +1,8 @@
 import * as React from 'react'
-
 import { FileBlock } from 'notion-types'
 
-import { useNotionContext } from '../context'
 import { FileIcon } from '../icons/file-icon'
+import { useNotionContext } from '../context'
 import { cs } from '../utils'
 import { Text } from './text'
 

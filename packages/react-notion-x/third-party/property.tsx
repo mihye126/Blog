@@ -78,10 +78,10 @@ export const PropertyImpl: React.FC<IPropertyProps> = (props) => {
   const renderFormulaValue = React.useMemo(
     () =>
       function FormulaProperty() {
-        let content: FormulaResult | null
+        let content: string ;
 
         try {
-          content = evalFormula(schema.formula, {
+          let content = evalFormula(schema.formula, {
             schema: collection?.schema,
             properties: block?.properties
           })
@@ -102,6 +102,9 @@ export const PropertyImpl: React.FC<IPropertyProps> = (props) => {
       },
     [block?.properties, collection?.schema, schema]
   )
+
+
+  
 
   const renderTitleValue = React.useMemo(
     () =>
