@@ -1,8 +1,15 @@
 import * as React from 'react'
+import dynamic from 'next/dynamic'
 
-import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
+
+const NotionPage = dynamic(() =>
+  import('@/components/NotionPage').then(
+    (m) => m.NotionPage
+  )
+)
+
 
 export const getStaticProps = async () => {
   try {
@@ -18,6 +25,9 @@ export const getStaticProps = async () => {
   }
 }
 
+
+
 export default function NotionDomainPage(props) {
+ 
   return <NotionPage {...props} />
 }

@@ -61,7 +61,7 @@ export default siteConfig({
   navigationLinks: [
     {
       title: 'Archive',
-      pageId: '9a5d1fdf7f73421e995b1844f04f0f3b'
+      pageId: 'Archive-9a5d1fdf7f73421e995b1844f04f0f3b'
     },
     {
       title: 'Post',
@@ -69,7 +69,7 @@ export default siteConfig({
     },
     {
       title: 'Contact',
-      pageId: 'c14a3833d6a44c23ad9728ddc9549985'
+      pageId: 'Contact-c14a3833d6a44c23ad9728ddc9549985'
     }
   ]
 })

@@ -5,8 +5,8 @@ const src = 'https://utteranc.es/client.js';
 
 
 export const Utterances: React.FC<{
-  isBlogPost: boolean
-}> = ({ isBlogPost }) => {
+  hasCollectionView: boolean
+}> = ({ hasCollectionView }) => {
  
   const commentsEl = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -20,15 +20,13 @@ export const Utterances: React.FC<{
     commentsEl.current?.appendChild(scriptEl);
   }, []);
 
-
-  if (! isBlogPost || utterancesRepo==null) {
+  if (hasCollectionView || utterancesRepo==null) {
     return null
   }
 
- 
 
   // only display comments and page actions on blog post pages
-  if (isBlogPost && utterancesRepo!=null) {
+  else{
       return <div className='notion-hr' ><div ref={commentsEl} className="utterances"/></div>;
   }
 

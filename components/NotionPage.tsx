@@ -34,7 +34,7 @@ import styles from './styles.module.css'
 // -----------------------------------------------------------------------------
 
 const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then(async (m) => {
+  import('react-notion-x/third-party/code').then(async (m) => {
     // add / remove any prism syntaxes here
     await Promise.all([
       import('prismjs/components/prism-markup-templating.js'),
@@ -74,22 +74,22 @@ const Code = dynamic(() =>
 )
 
 const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
+  import('react-notion-x/third-party/collection').then(
     (m) => m.Collection
   )
 )
 const Equation = dynamic(() =>
-  import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
+  import('react-notion-x/third-party/equation').then((m) => m.Equation)
 )
 const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
+  () => import('react-notion-x/third-party/pdf').then((m) => m.Pdf),
   {
     ssr: false
   }
 )
 const Modal = dynamic(
   () =>
-    import('react-notion-x/build/third-party/modal').then((m) => {
+    import('react-notion-x/third-party/modal').then((m) => {
       m.Modal.setAppElement('.notion-viewport')
       return m.Modal
     }),
@@ -195,7 +195,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
     isCategory
     && block?.type === 'page' 
     && block?.parent_table === 'collection'
-
+  
+  
+  const hasCollectionView = Object.keys(recordMap?.collection_query|| {}).length > 0
+  console.log("hasCollectionView",hasCollectionView)
 
   const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
@@ -208,8 +211,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
-  const comment = React.useMemo(() =><Utterances isBlogPost={isBlogPost}/>, [isBlogPost])
-  console.log()
+  const comment = React.useMemo(() =><Utterances hasCollectionView={hasCollectionView }/>, [hasCollectionView])
+  console.log("recordMap",recordMap)
 
   if (router.isFallback) {
     return <Loading />
