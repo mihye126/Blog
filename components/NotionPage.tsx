@@ -198,7 +198,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   
   
   const hasCollectionView = Object.keys(recordMap?.collection_query|| {}).length > 0
-  console.log("hasCollectionView",hasCollectionView)
 
   const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
@@ -212,7 +211,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const footer = React.useMemo(() => <Footer />, [])
   const comment = React.useMemo(() =><Utterances hasCollectionView={hasCollectionView }/>, [hasCollectionView])
-  console.log("recordMap",recordMap)
 
   if (router.isFallback) {
     return <Loading />
