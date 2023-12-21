@@ -21,7 +21,8 @@ module.exports = withPlugins([
         's3.us-west-2.amazonaws.com',
         'static.solved.ac',
         'ibb.co',
-        '',
+        'localhost:3000',
+        'hye-dev.vercel.app'
       ],
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
